@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="prevButton" type="id" />
+    <item name="nextButton" type="id" />
+    <item name="recycler_view" type="id" />
+    <item name="awayScore" type="id" />
+    <item name="homeScore" type="id" />
+    <item name="date" type="id" />
+    <item name="homeTeamBadge" type="id" />
+    <item name="awayTeamBadge" type="id" />
+    <item name="texView" type="id" />
+    <item name="progresBar" type="id" />
+    <item name="buttonNav" type="id" />
+    <item name="teamName" type="id" />
+    <item name="leagueBadge" type="id" />
+</resources>
