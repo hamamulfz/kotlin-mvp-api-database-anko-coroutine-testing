@@ -11,7 +11,7 @@ import com.example.fauzi.selectedmatchschedule.R
 import com.example.fauzi.selectedmatchschedule.response.TeamBadge
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class TeamAdapter(private val teams: List<TeamBadge>, private val listener: (TeamBadge) -> Unit)
     : RecyclerView.Adapter<TeamViewHolder>() {

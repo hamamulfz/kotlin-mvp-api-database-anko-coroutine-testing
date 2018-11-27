@@ -36,18 +36,6 @@ data class PlayerDetail(
         @SerializedName("strFanart1")
         var playerFanArt: String?,
 
-/*        @SerializedName("strFacebook")
-        var playerFacebook: String?,
-
-        @SerializedName("strTwitter")
-        var playerTwitter: String?,
-
-        @SerializedName("strInstagram")
-        var playerInstagram: String?,
-
-        @SerializedName("strYoutube")
-        var playerYoutube: String?,*/
-
         @SerializedName("strDescriptionEN")
         var playerDescription: String? = null
 ) : Parcelable

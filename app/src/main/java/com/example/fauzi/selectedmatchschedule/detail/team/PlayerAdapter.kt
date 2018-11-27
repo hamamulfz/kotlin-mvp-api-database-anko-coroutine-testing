@@ -11,7 +11,7 @@ import com.example.fauzi.selectedmatchschedule.R
 import com.example.fauzi.selectedmatchschedule.response.PlayerDetail
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class PlayerAdapter(private val player: List<PlayerDetail>, private val listener: (PlayerDetail) -> Unit)
     : RecyclerView.Adapter<PlayerViewHolder>() {

@@ -1,7 +1,6 @@
 package com.example.fauzi.footbalclub
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
@@ -31,7 +30,7 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
         super.onActivityCreated(savedInstanceState)
 
         adapter = FavoriteTeamsAdapter(favorites){
-            ctx.startActivity<TeamDetailActivity>("id" to "${it.teamId}")
+            requireContext().startActivity<TeamDetailActivity>("id" to "${it.teamId}")
         }
 
         listEvent.adapter = adapter

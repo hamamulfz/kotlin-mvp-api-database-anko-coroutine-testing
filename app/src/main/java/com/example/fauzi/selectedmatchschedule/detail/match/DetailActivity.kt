@@ -151,7 +151,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                     padding = dip(4)
                                     textSize = 20f
                                     gravity = Gravity.CENTER_HORIZONTAL
-                                    text = ctx.resources.getString(R.string.zero)
+                                    text = resources.getString(R.string.zero)
                                     //text=selectedMatch.homeScore
                                 }.lparams( 0,
                                          wrapContent,
@@ -160,7 +160,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                 }
 
                                 textView {
-                                    text = ctx.resources.getString(R.string.vs)
+                                    text = resources.getString(R.string.vs)
                                 }.lparams( 0,
                                          wrapContent,
                                          1f) {
@@ -172,7 +172,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                     padding = dip(4)
                                     gravity = Gravity.CENTER_HORIZONTAL
                                     textSize = 20f
-                                    text = ctx.resources.getString(R.string.zero)
+                                    text = resources.getString(R.string.zero)
                                 }.lparams( 0,
                                         wrapContent,
                                          4.5f) {
@@ -231,7 +231,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         id = R.id.d_homeTeamGoalDetail
                                         gravity = Gravity.END
                                         if (text == "") {
-                                            text = ctx.resources.getString(R.string.hypen)
+                                            text = resources.getString(R.string.hypen)
                                         }
                                     }.lparams(0, wrapContent, 4f)
 
@@ -239,7 +239,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         gravity = Gravity.CENTER
                                         leftPadding = dip(8)
                                         rightPadding = dip(8)
-                                        text = ctx.resources.getString(R.string.goals)
+                                        text = resources.getString(R.string.goals)
                                         textColor = Color.BLUE
                                     }.lparams(0,
                                             wrapContent,
@@ -250,7 +250,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         leftPadding = dip(4)
                                         id = R.id.d_awayTeamGoalDetail
                                         if (text == "") {
-                                            text = ctx.resources.getString(R.string.hypen)
+                                            text = resources.getString(R.string.hypen)
                                         }
                                     }.lparams(0,
                                             wrapContent,
@@ -273,7 +273,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         gravity = Gravity.CENTER
                                         leftPadding = dip(8)
                                         rightPadding = dip(8)
-                                        text = ctx.resources.getString(R.string.formation)
+                                        text = resources.getString(R.string.formation)
                                         textColor = Color.BLUE
                                     }.lparams(0,
                                             wrapContent,
@@ -302,7 +302,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                 textView {
                                     gravity = Gravity.CENTER
                                     textSize = 15f
-                                    text = ctx.resources.getString(R.string.line_up)
+                                    text = resources.getString(R.string.line_up)
                                     padding = dip(5)
                                     textColor = Color.WHITE
                                     backgroundColor = Color.BLUE
@@ -324,7 +324,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         gravity = Gravity.CENTER
                                         leftPadding = dip(8)
                                         rightPadding = dip(8)
-                                        text = ctx.resources.getString(R.string.forward)
+                                        text = resources.getString(R.string.forward)
                                         textColor = Color.BLUE
                                     }.lparams(0, wrapContent, 2f)
 
@@ -354,7 +354,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         gravity = Gravity.CENTER
                                         leftPadding = dip(8)
                                         rightPadding = dip(8)
-                                        text = ctx.resources.getString(R.string.midfield)
+                                        text = resources.getString(R.string.midfield)
                                         textColor = Color.BLUE
                                     }.lparams(0,
                                             wrapContent,
@@ -385,7 +385,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         gravity = Gravity.CENTER
                                         leftPadding = dip(8)
                                         rightPadding = dip(8)
-                                        text = ctx.resources.getString(R.string.defense)
+                                        text = resources.getString(R.string.defense)
                                         textColor = Color.BLUE
                                     }.lparams(0,
                                             wrapContent,
@@ -416,7 +416,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         gravity = Gravity.CENTER
                                         leftPadding = dip(8)
                                         rightPadding = dip(8)
-                                        text = ctx.resources.getString(R.string.goal_keeper)
+                                        text = resources.getString(R.string.goal_keeper)
                                         textColor = Color.BLUE
                                     }.lparams(0,
                                             wrapContent,
@@ -447,7 +447,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         gravity = Gravity.CENTER
                                         leftPadding = dip(8)
                                         rightPadding = dip(8)
-                                        text = ctx.resources.getString(R.string.substites)
+                                        text = resources.getString(R.string.substites)
                                         textColor = Color.BLUE
                                     }.lparams(0,
                                             wrapContent,
@@ -475,7 +475,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                 textView {
                                     gravity = Gravity.CENTER
                                     textSize = 15f
-                                    text = ctx.resources.getString(R.string.match_cards)
+                                    text = resources.getString(R.string.match_cards)
                                     padding = dip(5)
                                     textColor = Color.WHITE
                                     backgroundColor = Color.BLUE
@@ -490,7 +490,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         id = R.id.d_homeTeamYellowCards
                                         gravity = Gravity.END
                                         if (text == "") {
-                                            text = ctx.resources.getString(R.string.hypen)
+                                            text = resources.getString(R.string.hypen)
                                         }
                                     }.lparams(0, wrapContent, 4f)
 
@@ -498,7 +498,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         gravity = Gravity.CENTER
                                         leftPadding = dip(8)
                                         rightPadding = dip(8)
-                                        text = ctx.resources.getString(R.string.yellow_card)
+                                        text = resources.getString(R.string.yellow_card)
                                         textColor = Color.BLUE
                                     }.lparams(0,
                                             wrapContent,
@@ -509,7 +509,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         leftPadding = dip(8)
                                         id = R.id.d_awayTeamYellowCards
                                         if (text == "") {
-                                            text = ctx.resources.getString(R.string.hypen)
+                                            text = resources.getString(R.string.hypen)
                                         }
                                     }.lparams(0,
                                             wrapContent,
@@ -525,7 +525,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         id = R.id.d_homeTeamRedCards
                                         gravity = Gravity.END
                                         if (text == "") {
-                                            text = ctx.resources.getString(R.string.hypen)
+                                            text = resources.getString(R.string.hypen)
                                         }
                                     }.lparams(0,
                                             wrapContent,
@@ -535,7 +535,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         gravity = Gravity.CENTER
                                         leftPadding = dip(8)
                                         rightPadding = dip(8)
-                                        text = ctx.resources.getString(R.string.red_card)
+                                        text = resources.getString(R.string.red_card)
                                         textColor = Color.BLUE
                                     }.lparams(0,
                                             wrapContent,
@@ -546,7 +546,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
                                         leftPadding = dip(8)
                                         id = R.id.d_awayTeamRedCards
                                         if (text == "") {
-                                            text = ctx.resources.getString(R.string.hypen)
+                                            text = resources.getString(R.string.hypen)
                                         }
                                     }.lparams(0,
                                             wrapContent,
@@ -743,9 +743,9 @@ class DetailActivity : AppCompatActivity(), DetailView {
                         FavoriteMatch.HOME_VS_AWAY to eventsData.awayTeamVsHomeTeam
                         )
             }
-            snackbar(swipeRefresh, "Added to favorite").show()
+            swipeRefresh.snackbar("Added to favorite").show()
         } catch (e: SQLiteConstraintException){
-            snackbar(swipeRefresh, e.localizedMessage).show()
+            swipeRefresh.snackbar( e.localizedMessage).show()
         }
     }
 
@@ -755,9 +755,9 @@ class DetailActivity : AppCompatActivity(), DetailView {
                 delete(FavoriteMatch.TABLE_FAVORITE, "(ID_EVENT = {id})",
                         "id" to selectedMatch)
             }
-            snackbar(swipeRefresh, "Removed from favorite").show()
+            swipeRefresh.snackbar( "Removed from favorite").show()
         } catch (e: SQLiteConstraintException){
-            snackbar(swipeRefresh, e.localizedMessage).show()
+            swipeRefresh.snackbar( e.localizedMessage).show()
         }
     }
 

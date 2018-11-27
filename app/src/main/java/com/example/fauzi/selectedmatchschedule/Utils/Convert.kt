@@ -51,7 +51,7 @@ fun remove(string: String): CharSequence {
 
 fun extractTime(date: String, time: String): String {
     val string= toGMTFormat(date, time)
-    val time = remove("$string")
-    return "$time WIB"
+    val timed = remove("$string")
+    return "$timed WIB"
 
 }

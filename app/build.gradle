@@ -27,11 +27,7 @@ android {
     androidExtensions {
         experimental = true
     }
-    kotlin {
-        experimental {
-            coroutines "enable"
-        }
-    }
+
 }
 
 dependencies {
@@ -55,6 +51,7 @@ dependencies {
     implementation "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
     implementation "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$anko_version"
 
+
     // load picture
     implementation "com.squareup.picasso:picasso:2.71828"
     implementation "com.android.support:support-annotations:$supportlibrary_version"
@@ -66,8 +63,8 @@ dependencies {
     //anko-sqlite
     implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
 
-    //anko-oroutine
-    implementation "org.jetbrains.anko:anko-coroutines:$anko_version"
+    //coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.0"
 
     // mockito
     testImplementation 'org.mockito:mockito-core:2.22.0'

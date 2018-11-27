@@ -24,7 +24,7 @@ import com.example.fauzi.selectedmatchschedule.utils.visible
 import com.google.gson.Gson
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
@@ -56,7 +56,6 @@ class MainFragment : Fragment(), AnkoComponent<Context>, MainView {
         val request = ApiRepository()
         val gson = Gson()
         presenter = MainPresenter(this, request, gson)
-        //presenter.getPrevMatchList(convertToId(leagueName))
 
         swipeRefresh.onRefresh {
             if (status==1) {
@@ -115,7 +114,7 @@ class MainFragment : Fragment(), AnkoComponent<Context>, MainView {
                     }.lparams(width = dip(0), height = wrapContent, weight = 1f)
                 }
 
-                spinner = spinner() {
+                spinner = spinner {
                     id = R.id.spinner
                 }
 
@@ -129,7 +128,7 @@ class MainFragment : Fragment(), AnkoComponent<Context>, MainView {
 
                 button {
                     id = R.id.prevButton
-                    text = ctx.resources.getString(R.string.prev_match)
+                    text = resources.getString(R.string.prev_match)
                     onClick {
                         presenter.getPrevMatchList(convertToId(leagueName))
                         status = 1
@@ -142,7 +141,7 @@ class MainFragment : Fragment(), AnkoComponent<Context>, MainView {
 
                 button {
                     id = R.id.nextButton
-                    text = ctx.resources.getString(R.string.next_match)
+                    text = resources.getString(R.string.next_match)
                     onClick {
                         presenter.getNextMatchList(convertToId(leagueName))
                         status = 2

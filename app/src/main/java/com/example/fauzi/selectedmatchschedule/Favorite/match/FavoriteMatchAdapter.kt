@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.example.fauzi.selectedmatchschedule.R
 import com.example.fauzi.selectedmatchschedule.utils.dateConvertion
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class FavoriteMatchAdapter(
         private val items: List<FavoriteMatch>,

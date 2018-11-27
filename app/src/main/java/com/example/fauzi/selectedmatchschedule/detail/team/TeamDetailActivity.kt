@@ -37,7 +37,7 @@ import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
 import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.design.snackbar
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
 
@@ -63,7 +63,6 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
     private lateinit var buttonView: LinearLayout
     private lateinit var overviewButton: Button
     private lateinit var playerListButton: Button
-    //private lateinit var detailView: LinearLayout
 
 
     private var menuItem: Menu? = null
@@ -76,7 +75,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
 
         val intent = intent
         idTeam = intent.getStringExtra("id")
-        supportActionBar?.title = ctx.resources.getString(R.string.team_detail)
+        supportActionBar?.title = resources.getString(R.string.team_detail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         linearLayout {
@@ -141,7 +140,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
 
                         overviewButton = button {
                             id = R.id.overview
-                            text = ctx.resources.getString(R.string.overview)
+                            text = resources.getString(R.string.overview)
                             onClick {
                                 presenter.getTeamDetail(idTeam)
                                 status = 1
@@ -154,7 +153,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
 
                         playerListButton = button {
                             id = R.id.showPlayerList
-                            text = ctx.resources.getString(R.string.playerList)
+                            text = resources.getString(R.string.playerList)
                             onClick {
                                 presenter.getPlayerList(idTeam)
                                 status = 2
@@ -308,9 +307,9 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
                         Favorite.TEAM_NAME to teams.teamName,
                         Favorite.TEAM_BADGE to teams.matchTeamBadge)
             }
-            snackbar(swipeRefresh, "Added to favorite").show()
+            swipeRefresh.snackbar( "Added to favorite").show()
         } catch (e: SQLiteConstraintException){
-            snackbar(swipeRefresh, e.localizedMessage).show()
+            swipeRefresh.snackbar( e.localizedMessage).show()
         }
     }
 
@@ -320,9 +319,9 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
                 delete(Favorite.TABLE_FAVORITE_TEAM, "(TEAM_ID = {id})",
                         "id" to idTeam)
             }
-            snackbar(swipeRefresh, "Removed to favorite").show()
+            swipeRefresh.snackbar( "Removed to favorite").show()
         } catch (e: SQLiteConstraintException){
-            snackbar(swipeRefresh, e.localizedMessage).show()
+            swipeRefresh.snackbar( e.localizedMessage).show()
         }
     }
 

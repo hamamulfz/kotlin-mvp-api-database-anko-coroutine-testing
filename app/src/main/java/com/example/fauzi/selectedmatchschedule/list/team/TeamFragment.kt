@@ -25,7 +25,7 @@ import com.example.fauzi.selectedmatchschedule.utils.visible
 import com.google.gson.Gson
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
@@ -63,7 +63,7 @@ class TeamFragment : Fragment(), AnkoComponent<Context>, TeamView {
         }
 
         val spinnerItems = resources.getStringArray(league_resource)
-        val spinnerAdapter = ArrayAdapter(ctx, android.R.layout.simple_spinner_dropdown_item, spinnerItems)
+        val spinnerAdapter = ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, spinnerItems)
         spinner.adapter = spinnerAdapter
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -112,7 +112,7 @@ class TeamFragment : Fragment(), AnkoComponent<Context>, TeamView {
                 }.lparams(width = dip(0), height = wrapContent, weight = 1f)
             }
 
-            spinner = spinner() {
+            spinner = spinner {
                 id = R.id.spinner
             }
 

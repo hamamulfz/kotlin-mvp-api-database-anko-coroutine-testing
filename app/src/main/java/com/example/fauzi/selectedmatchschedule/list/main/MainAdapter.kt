@@ -11,7 +11,7 @@ import com.example.fauzi.selectedmatchschedule.R
 import com.example.fauzi.selectedmatchschedule.response.MatchList
 import com.example.fauzi.selectedmatchschedule.utils.dateConvertion
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class MainAdapter(
         private val items: List<MatchList>,

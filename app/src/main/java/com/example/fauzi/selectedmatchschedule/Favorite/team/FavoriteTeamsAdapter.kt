@@ -11,7 +11,7 @@ import com.example.fauzi.selectedmatchschedule.R.id.team_badge
 import com.example.fauzi.selectedmatchschedule.R.id.team_name
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class FavoriteTeamsAdapter(private val favorite: List<Favorite>, private val listener: (Favorite) -> Unit)
     : RecyclerView.Adapter<FavoriteViewHolder>() {

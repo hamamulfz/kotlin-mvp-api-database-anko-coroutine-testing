@@ -7,11 +7,13 @@ import com.example.fauzi.selectedmatchschedule.detail.match.DetailPresenter
 import com.example.fauzi.selectedmatchschedule.detail.match.DetailView
 import com.example.fauzi.selectedmatchschedule.response.*
 import com.google.gson.Gson
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.junit.Test
 
 import org.junit.Before
 import org.mockito.Mock
-import org.mockito.Mockito
+import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
 
@@ -43,16 +45,18 @@ class DetailPresenterTest {
         val response = TeamBadgeResponse(dataTeams)
         val id = "133621" //Bristol City
 
-        Mockito.`when`(gson.fromJson(apiRepository
-                .makeRequest(TheSportDBApi.getTeamDetails(id)),
-                TeamBadgeResponse::class.java
-        )).thenReturn(response)
+        GlobalScope.launch {
+            `when`(gson.fromJson(apiRepository
+                    .makeRequest(TheSportDBApi.getTeamDetails(id)).await(),
+                    TeamBadgeResponse::class.java
+            )).thenReturn(response)
 
-        presenter.getBadgeHomeTeam(id)
+            presenter.getBadgeHomeTeam(id)
 
-        verify(view).startLoading()
-        verify(view).showHomeTeamBadge(dataTeams)
-        verify(view).endLoading()
+            verify(view).startLoading()
+            verify(view).showHomeTeamBadge(dataTeams)
+            verify(view).endLoading()
+        }
 
     }
 
@@ -62,16 +66,18 @@ class DetailPresenterTest {
         val response = TeamBadgeResponse(dataTeams)
         val id = "133809" //Preston
 
-        Mockito.`when`(gson.fromJson(apiRepository
-                .makeRequest(TheSportDBApi.getTeamDetails(id)),
-                TeamBadgeResponse::class.java
-        )).thenReturn(response)
+        GlobalScope.launch {
+            `when`(gson.fromJson(apiRepository
+                    .makeRequest(TheSportDBApi.getTeamDetails(id)).await(),
+                    TeamBadgeResponse::class.java
+            )).thenReturn(response)
 
-        presenter.getBadgeAwayTeam(id)
+            presenter.getBadgeAwayTeam(id)
 
-        verify(view).startLoading()
-        verify(view).showAwayTeamBadge(dataTeams)
-        verify(view).endLoading()
+            verify(view).startLoading()
+            verify(view).showAwayTeamBadge(dataTeams)
+            verify(view).endLoading()
+        }
 
     }
 
@@ -81,16 +87,18 @@ class DetailPresenterTest {
         val response = LeagueBadgeResponse(dataTeams)
         val id = "4329" //English League Championship
 
-        Mockito.`when`(gson.fromJson(apiRepository
-                .makeRequest(TheSportDBApi.getLeagueDetails(id)),
-                LeagueBadgeResponse::class.java
-        )).thenReturn(response)
+        GlobalScope.launch {
+            `when`(gson.fromJson(apiRepository
+                    .makeRequest(TheSportDBApi.getLeagueDetails(id)).await(),
+                    LeagueBadgeResponse::class.java
+            )).thenReturn(response)
 
-        presenter.getBadgeLeague(id)
+            presenter.getBadgeLeague(id)
 
-        verify(view).startLoading()
-        verify(view).showLeagueBadge(dataTeams)
-        verify(view).endLoading()
+            verify(view).startLoading()
+            verify(view).showLeagueBadge(dataTeams)
+            verify(view).endLoading()
+        }
 
     }
 
@@ -100,15 +108,17 @@ class DetailPresenterTest {
         val response = MatchListResponse(dataEvents)
         val id = "577654" //Bristol City vs Preston
 
-        Mockito.`when`(gson.fromJson(apiRepository
-                .makeRequest(TheSportDBApi.getEventDetails(id)),
-                MatchListResponse::class.java
-        )).thenReturn(response)
+        GlobalScope.launch {
+            `when`(gson.fromJson(apiRepository
+                    .makeRequest(TheSportDBApi.getEventDetails(id)).await(),
+                    MatchListResponse::class.java
+            )).thenReturn(response)
 
-        presenter.getEventDetail(id)
+            presenter.getEventDetail(id)
 
-        verify(view).startLoading()
-        verify(view).showEventDetail(dataEvents)
-        verify(view).endLoading()
+            verify(view).startLoading()
+            verify(view).showEventDetail(dataEvents)
+            verify(view).endLoading()
+        }
     }
 }

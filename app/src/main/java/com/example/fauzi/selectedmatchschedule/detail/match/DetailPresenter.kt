@@ -7,8 +7,8 @@ import com.example.fauzi.selectedmatchschedule.response.LeagueBadgeResponse
 import com.example.fauzi.selectedmatchschedule.response.MatchListResponse
 import com.example.fauzi.selectedmatchschedule.response.TeamBadgeResponse
 import com.google.gson.Gson
-import kotlinx.coroutines.experimental.async
-import org.jetbrains.anko.coroutines.experimental.bg
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class DetailPresenter(private val view: DetailView,
                       private val apiRepository: ApiRepository,
@@ -18,28 +18,26 @@ class DetailPresenter(private val view: DetailView,
 
     fun getBadgeHomeTeam(idHomeTeam: String?) {
         view.startLoading()
-        async(context.main) {
-            val dataHome = bg {
-                gson.fromJson(apiRepository
-                        .makeRequest(TheSportDBApi.getTeamDetails(idHomeTeam.toString())),
+        GlobalScope.launch(context.main){
+            val dataHome = gson.fromJson(apiRepository
+                        .makeRequest(TheSportDBApi.getTeamDetails(idHomeTeam.toString())).await(),
                         TeamBadgeResponse::class.java
                 )
-            }
-            view.showHomeTeamBadge(dataHome.await().teams)
+
+            view.showHomeTeamBadge(dataHome.teams)
             view.endLoading()
         }
     }
 
     fun getBadgeAwayTeam(idAwayTeam: String?) {
         view.startLoading()
-        async(context.main) {
-            val dataAway = bg {
-                gson.fromJson(apiRepository
-                        .makeRequest(TheSportDBApi.getTeamDetails(idAwayTeam.toString())),
+        GlobalScope.launch(context.main){
+            val dataAway = gson.fromJson(apiRepository
+                        .makeRequest(TheSportDBApi.getTeamDetails(idAwayTeam.toString())).await(),
                         TeamBadgeResponse::class.java
                 )
-            }
-            view.showAwayTeamBadge(dataAway.await().teams)
+
+            view.showAwayTeamBadge(dataAway.teams)
             view.endLoading()
 
         }
@@ -48,28 +46,26 @@ class DetailPresenter(private val view: DetailView,
 
     fun getBadgeLeague(idLeague: String?) {
         view.startLoading()
-        async(context.main) {
-            val dataLeague = bg {
-                gson.fromJson(apiRepository
-                        .makeRequest(TheSportDBApi.getLeagueDetails(idLeague.toString())),
+        GlobalScope.launch(context.main){
+            val dataLeague = gson.fromJson(apiRepository
+                        .makeRequest(TheSportDBApi.getLeagueDetails(idLeague.toString())).await(),
                         LeagueBadgeResponse::class.java
                 )
-            }
-            view.showLeagueBadge(dataLeague.await().leagues)
+
+            view.showLeagueBadge(dataLeague.leagues)
             view.endLoading()
         }
     }
 
     fun getEventDetail(idEvent: String?) {
         view.startLoading()
-        async(context.main){
-            val dataEvent = bg {
-                gson.fromJson(apiRepository
-                        .makeRequest(TheSportDBApi.getEventDetails(idEvent.toString())),
+        GlobalScope.launch(context.main){
+            val dataEvent = gson.fromJson(apiRepository
+                        .makeRequest(TheSportDBApi.getEventDetails(idEvent.toString())).await(),
                         MatchListResponse::class.java
-                )
-            }
-            view.showEventDetail(dataEvent.await().events)
+            )
+
+            view.showEventDetail(dataEvent.events)
             view.endLoading()
         }
     }

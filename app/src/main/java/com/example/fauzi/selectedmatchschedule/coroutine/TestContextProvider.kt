@@ -1,8 +1,10 @@
 package com.example.fauzi.selectedmatchschedule.coroutine
 
-import kotlinx.coroutines.experimental.Unconfined
-import kotlin.coroutines.experimental.CoroutineContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlin.coroutines.CoroutineContext
 
 class TestContextProvider : CoroutineContextProvider() {
-    override val main: CoroutineContext = Unconfined
+    @ExperimentalCoroutinesApi
+    override val main: CoroutineContext = Dispatchers.Unconfined
 }

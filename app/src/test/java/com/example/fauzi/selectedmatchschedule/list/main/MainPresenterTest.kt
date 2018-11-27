@@ -7,6 +7,8 @@ import com.example.fauzi.selectedmatchschedule.response.MatchList
 import com.example.fauzi.selectedmatchschedule.response.MatchListResponse
 import com.example.fauzi.selectedmatchschedule.utils.convertToId
 import com.google.gson.Gson
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.junit.Test
 
 import org.junit.Before
@@ -43,16 +45,18 @@ class MainPresenterTest {
         val dataEvents: MutableList<MatchList> = mutableListOf()
         val response = MatchListResponse(dataEvents)
 
-        `when`(gson.fromJson(apiRepository
-                .makeRequest(TheSportDBApi.getPrevLeague(convertToId(string))),
-                MatchListResponse::class.java
-        )).thenReturn(response)
+        GlobalScope.launch {
+            `when`(gson.fromJson(apiRepository
+                    .makeRequest(TheSportDBApi.getPrevLeague(convertToId(string))).await(),
+                    MatchListResponse::class.java
+            )).thenReturn(response)
 
-        presenter.getPrevMatchList(convertToId(string))
+            presenter.getPrevMatchList(convertToId(string))
 
-        verify(view).startLoading()
-        verify(view).showMatchList(dataEvents)
-        verify(view).loadingEnd()
+            verify(view).startLoading()
+            verify(view).showMatchList(dataEvents)
+            verify(view).loadingEnd()
+        }
     }
 
     @Test
@@ -60,15 +64,17 @@ class MainPresenterTest {
         val events: MutableList<MatchList> = mutableListOf()
         val response= MatchListResponse(events)
 
-        `when`(gson.fromJson(apiRepository
-                .makeRequest(TheSportDBApi.getNextLeague(convertToId(string))),
-                MatchListResponse::class.java
-        )).thenReturn(response)
+        GlobalScope.launch {
+            `when`(gson.fromJson(apiRepository
+                    .makeRequest(TheSportDBApi.getNextLeague(convertToId(string))).await(),
+                    MatchListResponse::class.java
+            )).thenReturn(response)
 
-        presenter.getPrevMatchList(convertToId(string))
+            presenter.getPrevMatchList(convertToId(string))
 
-        verify(view).startLoading()
-        verify(view).showMatchList(events)
-        verify(view).loadingEnd()
+            verify(view).startLoading()
+            verify(view).showMatchList(events)
+            verify(view).loadingEnd()
+        }
     }
 }

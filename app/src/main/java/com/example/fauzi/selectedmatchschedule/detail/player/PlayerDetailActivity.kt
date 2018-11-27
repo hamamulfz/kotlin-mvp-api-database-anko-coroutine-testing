@@ -35,12 +35,11 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_player_detail)
 
         val intent = intent
         idPlayer = intent.getStringExtra("id")
 
-        supportActionBar?.title = ctx.resources.getString(R.string.player_detail)
+        supportActionBar?.title = resources.getString(R.string.player_detail)
 
 
 
@@ -91,7 +90,7 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView {
 
                                         textView {
                                             this.gravity = Gravity.CENTER
-                                            text = ctx.resources.getString(R.string.weight)
+                                            text = resources.getString(R.string.weight)
 
                                         }.lparams(matchParent, wrapContent)
 
@@ -110,7 +109,7 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView {
 
                                         textView {
                                             this.gravity = Gravity.CENTER
-                                            text = ctx.resources.getString(R.string.height)
+                                            text = resources.getString(R.string.height)
 
                                         }
 
@@ -172,10 +171,10 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView {
             else ->  Picasso.get().load(data[0].playerFanArt).into(playerImage)
         }
         playerName.text = data[0].playerName
+        playerPosition.text = data[0].playerPosition
         playerHeight.text = data[0].playerHeight
         playerWeight.text = data[0].playerWeight
         playerDesc.text = data[0].playerDescription
-        Log.d("tag", data[0].playerFanArt )
     }
 }
 

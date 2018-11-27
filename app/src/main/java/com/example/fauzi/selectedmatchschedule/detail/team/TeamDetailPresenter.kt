@@ -6,8 +6,8 @@ import com.example.fauzi.selectedmatchschedule.coroutine.CoroutineContextProvide
 import com.example.fauzi.selectedmatchschedule.response.PlayerListResponse
 import com.example.fauzi.selectedmatchschedule.response.TeamBadgeResponse
 import com.google.gson.Gson
-import kotlinx.coroutines.experimental.async
-import org.jetbrains.anko.coroutines.experimental.bg
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class TeamDetailPresenter(private val view: TeamDetailView,
                           private val apiRepository: ApiRepository,
@@ -17,15 +17,14 @@ class TeamDetailPresenter(private val view: TeamDetailView,
     fun getTeamDetail(teamId: String) {
         view.showLoading()
 
-        async(context.main){
-            val data = bg {
-                gson.fromJson(apiRepository
-                        .makeRequest(TheSportDBApi.getTeamDetail(teamId)),
+        GlobalScope.launch(context.main){
+            val data = gson.fromJson(apiRepository
+                        .makeRequest(TheSportDBApi.getTeamDetail(teamId)).await(),
                         TeamBadgeResponse::class.java
                 )
-            }
 
-            view.showTeamDetail(data.await().teams)
+
+            view.showTeamDetail(data.teams)
             view.hideRV()
             view.hideLoading()
         }
@@ -34,15 +33,14 @@ class TeamDetailPresenter(private val view: TeamDetailView,
     fun getPlayerList(teamName: String?) {
         view.showLoading()
 
-        async(context.main) {
-            val data = bg {
-                gson.fromJson(apiRepository
-                        .makeRequest(TheSportDBApi.getAllPlayer(teamName.toString())),
+        GlobalScope.launch(context.main){
+            val data =gson.fromJson(apiRepository
+                        .makeRequest(TheSportDBApi.getAllPlayer(teamName.toString())).await(),
                         PlayerListResponse::class.java
                 )
-            }
 
-            view.showPlayerList(data.await().player)
+
+            view.showPlayerList(data.player)
             view.showRV()
             view.hideLoading()
         }
