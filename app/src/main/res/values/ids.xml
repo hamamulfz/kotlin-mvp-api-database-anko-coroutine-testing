@@ -45,4 +45,6 @@
     <item name="d_homeTeamRedCards" type="id" />
     <item name="d_awayTeamRedCards" type="id" />
     <item name="d_awayTeamLineupSubstitutes" type="id" />
+    <item name="swipeRefresh" type="id" />
+    <item name="detail_layout" type="id" />
 </resources>

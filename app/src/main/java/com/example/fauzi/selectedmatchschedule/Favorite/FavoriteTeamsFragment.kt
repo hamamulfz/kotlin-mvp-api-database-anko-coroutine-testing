@@ -1,4 +1,4 @@
-package com.example.fauzi.selectedmatchschedule.Favorite
+package com.example.fauzi.selectedmatchschedule.favorite
 
 import android.content.Context
 import android.os.Bundle
@@ -9,7 +9,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.fauzi.selectedmatchschedule.DetailActivity.DetailActivity
+import com.example.fauzi.selectedmatchschedule.R
+import com.example.fauzi.selectedmatchschedule.detail.DetailActivity
 import com.example.fauzi.selectedmatchschedule.R.color.colorAccent
 import org.jetbrains.anko.*
 import org.jetbrains.anko.db.classParser
@@ -57,11 +58,13 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
     override fun createView(ui: AnkoContext<Context>): View = with(ui){
         linearLayout {
             lparams (width = matchParent, height = wrapContent)
+            id = R.id.detail_layout
             topPadding = dip(16)
             leftPadding = dip(16)
             rightPadding = dip(16)
 
             swipeRefresh = swipeRefreshLayout {
+                id = R.id.swipeRefresh
                 setColorSchemeResources(colorAccent,
                         android.R.color.holo_green_light,
                         android.R.color.holo_orange_light,
@@ -70,6 +73,7 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
                 listEvent = recyclerView {
                     lparams (width = matchParent, height = wrapContent)
                     layoutManager = LinearLayoutManager(ctx)
+                    id = R.id. recycler_view
                 }
             }
         }

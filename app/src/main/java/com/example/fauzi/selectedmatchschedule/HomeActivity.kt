@@ -2,8 +2,8 @@ package com.example.fauzi.selectedmatchschedule
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fauzi.selectedmatchschedule.Favorite.FavoriteTeamsFragment
-import com.example.fauzi.selectedmatchschedule.MainActivity.MainFragment
+import com.example.fauzi.selectedmatchschedule.favorite.FavoriteTeamsFragment
+import com.example.fauzi.selectedmatchschedule.main.MainFragment
 import com.example.fauzi.selectedmatchschedule.R.id.favorites
 import com.example.fauzi.selectedmatchschedule.R.id.teams
 import com.example.fauzi.selectedmatchschedule.R.layout.activity_home

@@ -1,4 +1,4 @@
-package com.example.fauzi.selectedmatchschedule.Api
+package com.example.fauzi.selectedmatchschedule.api
 
 import com.example.fauzi.selectedmatchschedule.BuildConfig
 
@@ -20,17 +20,17 @@ object TheSportDBApi{
 
     fun getTeamDetails(id: String): String {
         return getUri() +
-                "/lookupteam.php?id=${id}"
+                "/lookupteam.php?id=$id"
     }
 
     fun getLeagueDetails(id: String): String {
         return getUri() +
-                "/lookupleague.php?id=${id}"
+                "/lookupleague.php?id=$id"
     }
 
     fun getEventDetails(id: String): String {
         return getUri() +
-                "/lookupevent.php?id=${id}"
+                "/lookupevent.php?id=$id"
     }
 
 

@@ -1,4 +1,4 @@
-package com.example.fauzi.selectedmatchschedule.Utils
+package com.example.fauzi.selectedmatchschedule.utils
 
 import android.view.View
 

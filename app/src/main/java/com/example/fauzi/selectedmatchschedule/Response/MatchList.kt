@@ -1,4 +1,4 @@
-package com.example.fauzi.selectedmatchschedule.Response
+package com.example.fauzi.selectedmatchschedule.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

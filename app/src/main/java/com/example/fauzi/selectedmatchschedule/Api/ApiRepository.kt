@@ -1,4 +1,4 @@
-package com.example.fauzi.selectedmatchschedule.Api
+package com.example.fauzi.selectedmatchschedule.api
 
 import java.net.URL
 

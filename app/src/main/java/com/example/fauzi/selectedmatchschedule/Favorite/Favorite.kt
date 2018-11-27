@@ -1,4 +1,4 @@
-package com.example.fauzi.selectedmatchschedule.Favorite
+package com.example.fauzi.selectedmatchschedule.favorite
 
 data class Favorite(val id: Long?,
                     val eventId: String?,

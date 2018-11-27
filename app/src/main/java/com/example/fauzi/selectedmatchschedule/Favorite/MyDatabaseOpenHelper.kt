@@ -1,4 +1,4 @@
-package com.example.fauzi.selectedmatchschedule.Favorite
+package com.example.fauzi.selectedmatchschedule.favorite
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

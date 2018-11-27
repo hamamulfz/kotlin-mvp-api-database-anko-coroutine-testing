@@ -1,4 +1,4 @@
-package com.example.fauzi.selectedmatchschedule.favorite
+package com.example.fauzi.selectedmatchschedule.main
 
 import android.graphics.Color
 import android.support.v7.widget.RecyclerView
@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.fauzi.selectedmatchschedule.R
+import com.example.fauzi.selectedmatchschedule.response.MatchList
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
-class FavoriteTeamsAdapter(
-        private val items: List<Favorite>,
-        private val clickListener: (Favorite) -> Unit): RecyclerView.Adapter<ViewHolder>(){
+class MainAdapter(
+        private val items: List<MatchList>,
+        private val clickListener: (MatchList) -> Unit): RecyclerView.Adapter<ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(RecyclerViewTeamMatch().createView(AnkoContext.create(parent.context, parent)))
 
@@ -32,7 +33,7 @@ class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
     private val homeVsAwayTeam: TextView = view.findViewById(R.id.teamName)
 
 
-    fun bind(item: Favorite, clickListener: (Favorite) -> Unit) {
+    fun bind(item: MatchList, clickListener: (MatchList) -> Unit) {
         dateOfMatch.text = item.dateOfMatch
         homeTeamScore.text = item.homeScore
         awayTeamScore.text = item.awayScore

@@ -3,6 +3,23 @@
     <string name="favorites">Favorites</string>
     <string name="match">Match List</string>
     <string name="detail_name">Match Detail</string>
+    <string name="zero">0</string>
+    <string name="hypen">-</string>
+    <string name="vs">vs</string>
+    <string name="home_vs_away">Home vs Away</string>
+    <string name="goals">Goals</string>
+    <string name="formation">Formation</string>
+    <string name="line_up">Line Up</string>
+    <string name="forward">Forward</string>
+    <string name="midfield">Mid Field</string>
+    <string name="defense">Defense</string>
+    <string name="goal_keeper">Goal Keeper</string>
+    <string name="substites">Substitute</string>
+    <string name="match_cards">Match Cards</string>
+    <string name="yellow_card">Yellow Cards</string>
+    <string name="red_card">Red Cards</string>
+    <string name="prev_match">Prev Match </string>
+    <string name="next_match">Next Match</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
