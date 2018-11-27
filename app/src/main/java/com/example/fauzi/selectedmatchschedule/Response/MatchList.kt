@@ -7,8 +7,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class MatchList(
 
-
         //in Main adn Detail Activity
+        @SerializedName("idEvent")
+        var eventId: String?,
         @SerializedName("dateEvent")
         var dateOfMatch: String?,
         @SerializedName("idAwayTeam")
@@ -27,7 +28,6 @@ data class MatchList(
         var leagueId: String?,
         @SerializedName("strLeague")
         var leagueName: String?,
-
 
         @SerializedName("strAwayFormation")
         var awayTeamFormation: String?,
@@ -70,6 +70,5 @@ data class MatchList(
         var homeTeamRedCards: String?,
         @SerializedName("strHomeYellowCards")
         var homeTeamYellowCards: String?
-
 
 ) : Parcelable

@@ -3,6 +3,7 @@ package com.example.fauzi.selectedmatchschedule.DetailActivity
 import com.example.fauzi.selectedmatchschedule.Api.ApiRepository
 import com.example.fauzi.selectedmatchschedule.Api.TheSportDBApi
 import com.example.fauzi.selectedmatchschedule.Response.LeagueBadgeResponse
+import com.example.fauzi.selectedmatchschedule.Response.MatchListResponse
 import com.example.fauzi.selectedmatchschedule.Response.TeamBadgeResponse
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
@@ -55,6 +56,21 @@ class DetailPresenter(private val view: DetailView,
             }
         }
     }
+
+    fun getEventDetail(idEvent: String?) {
+        view.startLoading()
+        doAsync {
+            val dataEvent = gson.fromJson(apiRepository
+                    .makeRequest(TheSportDBApi.getEventDetails(idEvent.toString())),
+                    MatchListResponse::class.java
+            )
+            uiThread {
+                view.endLoading()
+                view.showEventDetail(dataEvent.events)
+            }
+        }
+    }
+
 }
 
 

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">English League Championship</string>
+    <string name="favorites">Favorites</string>
+    <string name="match">Match List</string>
+    <string name="detail_name">Match Detail</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

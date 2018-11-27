@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--both in main and detail-->
+    <item name="progresBar" type="id" />
+
+    <!--in main activity-->
     <item name="prevButton" type="id" />
     <item name="nextButton" type="id" />
     <item name="recycler_view" type="id" />
+    <item name="buttonNav" type="id" />
+
+    <!--in adapter-->
     <item name="awayScore" type="id" />
     <item name="homeScore" type="id" />
     <item name="date" type="id" />
     <item name="homeTeamBadge" type="id" />
     <item name="awayTeamBadge" type="id" />
-    <item name="texView" type="id" />
-    <item name="progresBar" type="id" />
-    <item name="buttonNav" type="id" />
     <item name="teamName" type="id" />
-    <item name="leagueBadge" type="id" />
+
+    <!--in detail-->
+    <item name="d_leagueName" type="id" />
+    <item name="d_dateOfMatch" type="id" />
+    <item name="d_homeTeamName" type="id" />
+    <item name="d_leagueBadge" type="id" />
+    <item name="d_homeTeamBadge" type="id" />
+    <item name="d_homeScore" type="id" />
+    <item name="d_awayScore" type="id" />
+    <item name="d_awayTeamBadge" type="id" />
+    <item name="d_awayTeamName" type="id" />
+    <item name="d_homeTeamGoalDetail" type="id" />
+    <item name="d_awayTeamGoalDetail" type="id" />
+    <item name="d_homeTeamFormation" type="id" />
+    <item name="d_awayTeamFormation" type="id" />
+    <item name="d_homeTeamLineupForward" type="id" />
+    <item name="d_awayTeamLineupForward" type="id" />
+    <item name="d_homeTeamLineupMidfield" type="id" />
+    <item name="d_awayTeamLineupMidfield" type="id" />
+    <item name="d_homeTeamLineupDefense" type="id" />
+    <item name="d_awayTeamLineupDefense" type="id" />
+    <item name="d_homeTeamLineupGoalkeeper" type="id" />
+    <item name="d_awayTeamLineupGoalkeeper" type="id" />
+    <item name="d_homeTeamLineupSubstitutes" type="id" />
+    <item name="d_homeTeamYellowCards" type="id" />
+    <item name="d_awayTeamYellowCards" type="id" />
+    <item name="d_homeTeamRedCards" type="id" />
+    <item name="d_awayTeamRedCards" type="id" />
+    <item name="d_awayTeamLineupSubstitutes" type="id" />
 </resources>

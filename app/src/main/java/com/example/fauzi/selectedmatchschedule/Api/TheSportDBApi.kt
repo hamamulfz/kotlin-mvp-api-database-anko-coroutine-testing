@@ -28,6 +28,13 @@ object TheSportDBApi{
                 "/lookupleague.php?id=${id}"
     }
 
+    fun getEventDetails(id: String): String {
+        return getUri() +
+                "/lookupevent.php?id=${id}"
+    }
+
+
+
 
 
 
