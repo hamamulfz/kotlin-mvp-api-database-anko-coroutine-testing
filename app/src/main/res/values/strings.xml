@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">English League Championship</string>
+    <string name="app_name">Football Match Schedule</string>
     <string name="favorites">Favorites</string>
+    <string name="favorites_team">Team Fav</string>
+    <string name="favorites_match">Match Fav</string>
     <string name="match">Match List</string>
     <string name="detail_name">Match Detail</string>
     <string name="zero">0</string>
@@ -20,7 +22,30 @@
     <string name="red_card">Red Cards</string>
     <string name="prev_match">Prev Match </string>
     <string name="next_match">Next Match</string>
+    <array name="league_resource">
+        <item>English Premier League</item>
+        <item>English League Championship</item>
+        <item>Scottish Premier League</item>
+        <item>German Bundesliga</item>
+        <item>Italian Serie A</item>
+        <item>French Ligue 1</item>
+        <item>Spanish La Liga</item>
+        <item>Greek Superleague Greece</item>
+        <item>Dutch Eredivisie</item>
+        <item>Belgian Jupiler League</item>
+        <item>Danish Superliga</item>
+        <item>Portuguese Primeira Liga</item>
+        <item>American Major League Soccer</item>
+        <item>Swedish Allsvenskan</item>
+        <item>Australian A-League</item>
+    </array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="overview">Overview</string>
+    <string name="playerList">List Player</string>
+    <string name="weight">Weight (Kg)</string>
+    <string name="height">Height (m)</string>
+    <string name="team_detail">Team Detail</string>
+    <string name="player_detail">Player Detail</string>
 </resources>

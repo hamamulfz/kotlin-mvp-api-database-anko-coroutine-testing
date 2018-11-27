@@ -18,8 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".detail.DetailActivity" />
-        <activity android:name=".main.MainActivity"></activity>
+        <activity android:name=".detail.match.DetailActivity" />
+        <activity android:name=".list.main.MainActivity" />
+        <activity android:name=".detail.team.TeamDetailActivity" />
+        <activity android:name=".detail.player.PlayerDetailActivity"></activity>
     </application>
 
 </manifest>

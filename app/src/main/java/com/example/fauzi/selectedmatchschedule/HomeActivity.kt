@@ -2,11 +2,12 @@ package com.example.fauzi.selectedmatchschedule
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fauzi.selectedmatchschedule.favorite.FavoriteTeamsFragment
-import com.example.fauzi.selectedmatchschedule.main.MainFragment
-import com.example.fauzi.selectedmatchschedule.R.id.favorites
-import com.example.fauzi.selectedmatchschedule.R.id.teams
+import com.example.fauzi.footbalclub.FavoriteTeamsFragment
+import com.example.fauzi.selectedmatchschedule.R.id.*
+import com.example.fauzi.selectedmatchschedule.favorite.match.FavoriteMatchFragment
+import com.example.fauzi.selectedmatchschedule.list.main.MainFragment
 import com.example.fauzi.selectedmatchschedule.R.layout.activity_home
+import com.example.fauzi.selectedmatchschedule.list.team.TeamFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -18,10 +19,16 @@ class HomeActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 teams -> {
-                    loadTeamsFragment(savedInstanceState)
+                    loadMatchListFragment(savedInstanceState)
                 }
-                favorites -> {
-                    loadFavoritesFragment(savedInstanceState)
+                favorite_match -> {
+                    loadFavoritesMatchFragment(savedInstanceState)
+                }
+                club -> {
+                    loadTeamFragment(savedInstanceState)
+                }
+                favorite_team -> {
+                    loadFavoritesTeamFragment(savedInstanceState)
                 }
             }
             true
@@ -29,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
         bottom_navigation.selectedItemId = teams
     }
 
-    private fun loadTeamsFragment(savedInstanceState: Bundle?) {
+    private fun loadMatchListFragment(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
@@ -38,12 +45,31 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadFavoritesFragment(savedInstanceState: Bundle?) {
+    private fun loadFavoritesMatchFragment(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.main_container, FavoriteMatchFragment(), FavoriteMatchFragment::class.java.simpleName)
+                    .commit()
+        }
+    }
+
+    private fun loadFavoritesTeamFragment(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.main_container, FavoriteTeamsFragment(), FavoriteTeamsFragment::class.java.simpleName)
                     .commit()
+        }
+    }
+
+    private fun loadTeamFragment(savedInstanceState: Bundle?){
+        if(savedInstanceState==null){
+            supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.main_container, TeamFragment(), TeamFragment::class.java.simpleName)
+                    .commit()
+
         }
     }
 }

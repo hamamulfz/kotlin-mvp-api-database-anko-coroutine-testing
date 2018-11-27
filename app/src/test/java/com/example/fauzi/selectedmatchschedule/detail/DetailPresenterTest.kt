@@ -3,6 +3,8 @@ package com.example.fauzi.selectedmatchschedule.detail
 import com.example.fauzi.selectedmatchschedule.coroutine.TestContextProvider
 import com.example.fauzi.selectedmatchschedule.api.ApiRepository
 import com.example.fauzi.selectedmatchschedule.api.TheSportDBApi
+import com.example.fauzi.selectedmatchschedule.detail.match.DetailPresenter
+import com.example.fauzi.selectedmatchschedule.detail.match.DetailView
 import com.example.fauzi.selectedmatchschedule.response.*
 import com.google.gson.Gson
 import org.junit.Test

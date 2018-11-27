@@ -2,8 +2,7 @@ package com.example.fauzi.selectedmatchschedule
 
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.Espresso.pressBack
-import android.support.test.espresso.action.ViewActions.click
-import android.support.test.espresso.action.ViewActions.swipeDown
+import android.support.test.espresso.action.ViewActions.*
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import android.support.test.espresso.contrib.RecyclerViewActions.scrollToPosition
@@ -54,7 +53,7 @@ class HomeActivityTest{
 
         // click fav bottom navigation
         onView(withId(bottom_navigation)).check(matches(isDisplayed()))
-        onView(withId(favorites)).perform(click())
+        onView(withId(favorite_match)).perform(click())
 
         // Detail Match - unfav - back
         Thread.sleep(2000)
@@ -74,8 +73,36 @@ class HomeActivityTest{
         onView(withText("Removed from favorite")).check(matches(isDisplayed()))
         pressBack()
 
-        //klik nav_menu list match
+
+        //klik nav_menu list team
         onView(withId(bottom_navigation)).check(matches(isDisplayed()))
-        onView(withId(teams)).perform(click())
+        onView(withId(club)).perform(click())
+
+        //type edit text - searh - click
+        Thread.sleep(2000)
+        onView(withId(search_team)).check(matches(isDisplayed()))
+        onView(withId(search_team)).perform(typeText("Barcel"))
+        onView(withId(search_team_button)).perform(click())
+        onView(withId( R.id.recycler_view)).perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+
+        // Detail Team - fav
+        onView(withId(add_to_favorite)).check(matches(isDisplayed()))
+        onView(withId(add_to_favorite)).perform(click())
+        onView(withText("Added to favorite")).check(matches(isDisplayed()))
+
+        // show rv player list - click - back
+        Thread.sleep(2000)
+        onView(withId(showPlayerList)).check(matches(isDisplayed()))
+        onView(withId(showPlayerList)).perform(click())
+        onView(withId( R.id.recycler_view)).perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(8, click()))
+        Thread.sleep(2000)
+        pressBack()
+
+        // unfav
+        onView(withId(add_to_favorite)).check(matches(isDisplayed()))
+        onView(withId(add_to_favorite)).perform(click())
+        onView(withText("Removed from favorite")).check(matches(isDisplayed()))
+        pressBack()
+
     }
 }

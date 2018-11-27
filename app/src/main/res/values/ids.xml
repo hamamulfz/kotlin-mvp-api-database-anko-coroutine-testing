@@ -47,4 +47,20 @@
     <item name="d_awayTeamLineupSubstitutes" type="id" />
     <item name="swipeRefresh" type="id" />
     <item name="detail_layout" type="id" />
+    <item name="team_badge" type="id" />
+    <item name="team_name" type="id" />
+    <item name="spinner" type="id" />
+    <item name="search_team" type="id" />
+    <item name="layout_feature" type="id" />
+    <item name="player_name" type="id" />
+    <item name="player_badge" type="id" />
+    <item name="overview" type="id" />
+    <item name="showPlayerList" type="id" />
+    <item name="headView" type="id" />
+    <item name="buttonView" type="id" />
+    <item name="player_images" type="id" />
+    <item name="player_weight" type="id" />
+    <item name="player_height" type="id" />
+    <item name="player_position" type="id" />
+    <item name="search_team_button" type="id" />
 </resources>

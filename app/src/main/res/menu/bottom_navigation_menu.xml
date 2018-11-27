@@ -9,9 +9,24 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/favorites"
+        android:id="@+id/favorite_match"
         android:enabled="true"
-        android:icon="@drawable/ic_special_favorites"
-        android:title="@string/favorites"
+        android:icon="@drawable/ic_fav_match"
+        android:title="@string/favorites_match"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/favorite_team"
+        android:enabled="true"
+        android:icon="@drawable/ic_fav_team"
+        android:title="@string/favorites_team"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/club"
+        android:enabled="true"
+        android:icon="@drawable/ic_list_logo"
+        android:title="Team"
+        app:showAsAction="ifRoom"
+        />
 </menu>
