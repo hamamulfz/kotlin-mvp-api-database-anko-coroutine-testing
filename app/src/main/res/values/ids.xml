@@ -63,4 +63,5 @@
     <item name="player_height" type="id" />
     <item name="player_position" type="id" />
     <item name="search_team_button" type="id" />
+    <item name="recycler_view_team" type="id" />
 </resources>

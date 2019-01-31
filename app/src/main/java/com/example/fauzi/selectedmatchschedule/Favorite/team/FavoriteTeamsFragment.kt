@@ -1,4 +1,4 @@
-package com.example.fauzi.footbalclub
+package com.example.fauzi.selectedmatchschedule.favorite.team
 
 import android.content.Context
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.fauzi.selectedmatchschedule.R
 import com.example.fauzi.selectedmatchschedule.R.color.colorAccent
 import com.example.fauzi.selectedmatchschedule.detail.team.TeamDetailActivity
 import com.example.fauzi.selectedmatchschedule.favorite.database
@@ -29,7 +30,7 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        adapter = FavoriteTeamsAdapter(favorites){
+        adapter = FavoriteTeamsAdapter(favorites) {
             requireContext().startActivity<TeamDetailActivity>("id" to "${it.teamId}")
         }
 
@@ -69,6 +70,7 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
                         android.R.color.holo_red_light)
 
                 listEvent = recyclerView {
+                    id = R.id.recycler_view_team
                     lparams (width = matchParent, height = wrapContent)
                     layoutManager = LinearLayoutManager(ctx)
                 }

@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Football Match Schedule</string>
     <string name="favorites">Favorites</string>
-    <string name="favorites_team">Team Fav</string>
-    <string name="favorites_match">Match Fav</string>
+    <string name="favorites_match">Favorite</string>
     <string name="match">Match List</string>
     <string name="detail_name">Match Detail</string>
     <string name="zero">0</string>

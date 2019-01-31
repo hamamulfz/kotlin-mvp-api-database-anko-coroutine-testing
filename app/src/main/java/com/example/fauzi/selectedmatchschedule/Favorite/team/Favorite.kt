@@ -1,4 +1,4 @@
-package com.example.fauzi.footbalclub
+package com.example.fauzi.selectedmatchschedule.favorite.team
 
 data class Favorite(val id: Long?, val teamId: String?, val teamName: String?, val teamBadge: String?) {
 

@@ -2,8 +2,8 @@ package com.example.fauzi.selectedmatchschedule.favorite
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import com.example.fauzi.footbalclub.Favorite
 import com.example.fauzi.selectedmatchschedule.favorite.match.FavoriteMatch
+import com.example.fauzi.selectedmatchschedule.favorite.team.Favorite
 import org.jetbrains.anko.db.*
 
 class MyDatabaseMatchOpenHelper(ctx: Context) : ManagedSQLiteOpenHelper(ctx, "Favorite.db", null, 1) {

@@ -11,6 +11,7 @@ import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
 import android.support.v7.widget.RecyclerView
 import com.example.fauzi.selectedmatchschedule.R.id.*
+import org.hamcrest.Matchers.allOf
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -55,6 +56,9 @@ class HomeActivityTest{
         onView(withId(bottom_navigation)).check(matches(isDisplayed()))
         onView(withId(favorite_match)).perform(click())
 
+        onView(allOf(withText("MATCHS"), isDescendantOfA(withId(R.id.viewpager_main))))
+                .perform(click())
+
         // Detail Match - unfav - back
         Thread.sleep(2000)
         onView(withId(R.id.recycler_view)).perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
@@ -97,11 +101,19 @@ class HomeActivityTest{
         onView(withId( R.id.recycler_view)).perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(8, click()))
         Thread.sleep(2000)
         pressBack()
+        Thread.sleep(2000)
+        pressBack()
 
+        onView(withId(bottom_navigation)).check(matches(isDisplayed()))
+        onView(withId(favorite_match)).perform(click())
+        onView(allOf(withText("TEAMS"), isDescendantOfA(withId(R.id.viewpager_main))))
+                .perform(click())
+        onView(withId(R.id.recycler_view_team)).perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
         // unfav
         onView(withId(add_to_favorite)).check(matches(isDisplayed()))
         onView(withId(add_to_favorite)).perform(click())
         onView(withText("Removed from favorite")).check(matches(isDisplayed()))
+        Thread.sleep(2000)
         pressBack()
 
     }

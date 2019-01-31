@@ -1,4 +1,4 @@
-package com.example.fauzi.footbalclub
+package com.example.fauzi.selectedmatchschedule.favorite.team
 
 import android.graphics.Color
 import android.support.v7.widget.RecyclerView
@@ -12,6 +12,9 @@ import com.example.fauzi.selectedmatchschedule.R.id.team_name
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
+
+
+
 
 class FavoriteTeamsAdapter(private val favorite: List<Favorite>, private val listener: (Favorite) -> Unit)
     : RecyclerView.Adapter<FavoriteViewHolder>() {

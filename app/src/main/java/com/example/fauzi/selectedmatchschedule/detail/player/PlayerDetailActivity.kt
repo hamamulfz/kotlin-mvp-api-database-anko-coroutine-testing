@@ -172,9 +172,11 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView {
         }
         playerName.text = data[0].playerName
         playerPosition.text = data[0].playerPosition
-        playerHeight.text = data[0].playerHeight
+        playerHeight.text = data[0].playerHeight.toString().subSequence(0,4)
         playerWeight.text = data[0].playerWeight
         playerDesc.text = data[0].playerDescription
+        val string : String = data[0].playerHeight.toString()
+        Log.d("weight", string)
     }
 }
 

@@ -2,12 +2,13 @@ package com.example.fauzi.selectedmatchschedule
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fauzi.footbalclub.FavoriteTeamsFragment
 import com.example.fauzi.selectedmatchschedule.R.id.*
 import com.example.fauzi.selectedmatchschedule.favorite.match.FavoriteMatchFragment
 import com.example.fauzi.selectedmatchschedule.list.main.MainFragment
 import com.example.fauzi.selectedmatchschedule.R.layout.activity_home
+import com.example.fauzi.selectedmatchschedule.favorite.team.FavoriteTeamsFragment
 import com.example.fauzi.selectedmatchschedule.list.team.TeamFragment
+import com.example.fauzi.selectedmatchschedule.tablayout.FavoriteFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -26,9 +27,6 @@ class HomeActivity : AppCompatActivity() {
                 }
                 club -> {
                     loadTeamFragment(savedInstanceState)
-                }
-                favorite_team -> {
-                    loadFavoritesTeamFragment(savedInstanceState)
                 }
             }
             true
@@ -49,19 +47,11 @@ class HomeActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.main_container, FavoriteMatchFragment(), FavoriteMatchFragment::class.java.simpleName)
+                    .replace(R.id.main_container, FavoriteFragment(), FavoriteMatchFragment::class.java.simpleName)
                     .commit()
         }
     }
 
-    private fun loadFavoritesTeamFragment(savedInstanceState: Bundle?) {
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.main_container, FavoriteTeamsFragment(), FavoriteTeamsFragment::class.java.simpleName)
-                    .commit()
-        }
-    }
 
     private fun loadTeamFragment(savedInstanceState: Bundle?){
         if(savedInstanceState==null){

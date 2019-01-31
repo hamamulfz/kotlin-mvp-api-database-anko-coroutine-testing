@@ -13,7 +13,6 @@ import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
-import com.example.fauzi.footbalclub.Favorite
 import com.example.fauzi.selectedmatchschedule.R
 import com.example.fauzi.selectedmatchschedule.R.color.colorAccent
 import com.example.fauzi.selectedmatchschedule.R.color.colorPrimaryDark
@@ -24,6 +23,7 @@ import com.example.fauzi.selectedmatchschedule.R.menu.detail_menu
 import com.example.fauzi.selectedmatchschedule.api.ApiRepository
 import com.example.fauzi.selectedmatchschedule.favorite.database
 import com.example.fauzi.selectedmatchschedule.detail.player.PlayerDetailActivity
+import com.example.fauzi.selectedmatchschedule.favorite.team.Favorite
 import com.example.fauzi.selectedmatchschedule.response.PlayerDetail
 import com.example.fauzi.selectedmatchschedule.response.TeamBadge
 import com.example.fauzi.selectedmatchschedule.utils.invisible
@@ -319,7 +319,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
                 delete(Favorite.TABLE_FAVORITE_TEAM, "(TEAM_ID = {id})",
                         "id" to idTeam)
             }
-            swipeRefresh.snackbar( "Removed to favorite").show()
+            swipeRefresh.snackbar( "Removed from favorite").show()
         } catch (e: SQLiteConstraintException){
             swipeRefresh.snackbar( e.localizedMessage).show()
         }
